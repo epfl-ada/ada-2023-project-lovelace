@@ -2493,7 +2493,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/043l4wc,Ivan Desny,M,1922.0,,
 /m/04jxlw,Akim Tamiroff,M,1899.0,1.651,
 /m/0616jw,Felix Aylmer,M,1889.0,,
-/m/04kdmg,Jason London,M,1972.0,1.8,
+/m/04kdmg,Jason London,M,,1.8,
 /m/0hglv,Jean Hersholt,M,1886.0,1.8,
 /m/07__pr,Chester Conklin,M,1886.0,1.65,
 /m/0k7g8k,Lon Poff,M,1870.0,1.89,
@@ -2660,7 +2660,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/0234_q,Donna Reed,F,1921.0,1.7,White people
 /m/05b3bm,Barbara Hale,F,1930.0,1.65,
 /m/0436zq,William Demarest,M,1892.0,,
-/m/0bkkw0,Eduardo Noriega,M,1973.0,1.79,
+/m/0bkkw0,Eduardo Noriega,M,,1.79,
 /m/02qdfvc,Lester Matthews,M,1900.0,,
 /m/03npz_r,Herbert Heyes,M,1889.0,,
 /m/02805gx,Ariadna Gil,F,1969.0,,
@@ -3684,7 +3684,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/0fm_01,Julie Depardieu,F,1973.0,,
 /m/05pc8b2,Michel Duchaussoy,M,1938.0,,
 /m/07qbkb,Adolfo Celi,M,1922.0,,
-/m/0bz29f,Robert Hoffman,M,1980.0,1.87,
+/m/0bz29f,Robert Hoffman,M,,1.87,
 /m/06mnps,James McAvoy,M,1979.0,1.7,
 /m/07myb2,Kerry Washington,F,1977.0,1.626,African American
 /m/03x8kv,David Oyelowo,M,1976.0,1.778,
@@ -4152,9 +4152,11 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/03g4ck,Takeshi Kaneshiro,M,1973.0,1.778,
 /m/01f873,Tony Leung Chiu Wai,M,1962.0,1.71,Hong Kong people
 /m/05dp9m,Brigitte Lin,F,1954.0,,
+/m/023nlj,Eric Roberts,M,,1.78,
 /m/073yhm,George Coulouris,M,1903.0,,
 /m/053t24,Lilli Palmer,F,1914.0,,Germans
 /m/0cspqw,Ana Torrent,F,1966.0,,
+/m/0bkkw0,Eduardo Noriega,M,1973.0,1.79,
 /m/07fjxg,Mustafa Nadarević,M,1943.0,,
 /m/04gq20z,Marisa Merlini,F,1923.0,,
 /m/07c564,Richard Jordan,M,1937.0,,
@@ -5091,6 +5093,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/0dm2p6,Ileana D'Cruz,F,1987.0,1.65,Indian people
 /m/02hhtj,Wilmer Valderrama,M,1980.0,1.715,
 /m/0chjy2,Michael Gothard,M,1939.0,,
+/m/0d80tn,Jeevan,M,,,
 /m/036jb,Gene Kelly,M,1912.0,1.7,
 /m/01mmslz,Debbie Reynolds,F,1932.0,1.57,White American
 /m/0p9vh,Jimmy Durante,M,1893.0,1.7,
@@ -6104,6 +6107,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/0krz_9,Charlotte Burton,F,1881.0,,
 /m/01gbn6,Kevin Kline,M,1947.0,1.88,German American
 /m/017gxw,Penelope Wilton,F,1946.0,1.702,
+/m/04kdmg,Jason London,M,1972.0,1.8,
 /m/02_0d2,Zach Galifianakis,M,1969.0,1.73,Greek American
 /m/09bgw1,Willie Garson,M,1964.0,1.715,
 /m/0bm13d,Lewis Arquette,M,1935.0,,Jewish people
@@ -6303,9 +6307,11 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/02x6k3h,Addison Richards,M,1887.0,,
 /m/06jq27,Byron Foulger,M,1899.0,,
 /m/03hkx56,Dennis Moore,M,1908.0,,
-/m/0534nr,Dave Goelz,M,1946.0,,
+/m/01vy_v8,Frank Oz,M,,1.88,Jewish people
+/m/01hqd4,Fran Brill,F,,,
+/m/0534nr,Dave Goelz,M,,,
 /m/01mvth,Jerry Nelson,M,1934.0,,
-/m/01w1ywm,Richard Hunt,M,1951.0,,
+/m/01w1ywm,Richard Hunt,M,,,
 /m/03cd295,James A. Marcus,M,1867.0,,
 /m/06hs2c,Michael Constantine,M,1927.0,,
 /m/0406cwn,Ruth White,F,1914.0,,
@@ -7245,7 +7251,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/05b1r0v,Minna Gombell,F,1892.0,,
 /m/027lrln,Eva Mattes,F,1955.0,,
 /m/0279537,Shin Hyun-jun,M,1968.0,1.93,
-/m/08vxk5,Jyothika Saravanan,F,1978.0,1.71,
+/m/08vxk5,Jyothika Saravanan,F,,1.71,
 /m/01wk7b7,John Stamos,M,1963.0,1.82,Greek American
 /m/0k4skn,Ric Young,M,,,
 /m/07ly4v,Kim Poirier,F,1980.0,1.65,
@@ -7457,6 +7463,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/014zzk,Hattie Jacques,F,1922.0,1.67,
 /m/015kt_,Bill Owen,M,1914.0,,
 /m/04yskw,Shirley Eaton,F,1937.0,1.702,
+/m/08vxk5,Jyothika Saravanan,F,1978.0,1.71,
 /m/0269mzw,Vijay Arora,M,1944.0,,Indian people
 /m/09v62tw,Dinesh Thakur,M,,,
 /m/016k92,Tom Conti,M,1941.0,1.8,
@@ -7662,6 +7669,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/034fqp,Robert Foxworth,M,1941.0,1.803,
 /m/04gkw_3,Forrest Taylor,M,1883.0,,
 /m/02634m8,Yutaka Matsushige,M,1963.0,,
+/m/0bz29f,Robert Hoffman,M,1980.0,1.87,
 /m/0fbvr3,Columbus Short,M,1982.0,1.78,African American
 /m/03c2b1,Richard Boone,M,1917.0,1.854,
 /m/015djp,Anthony Franciosa,M,1928.0,1.85,
@@ -7745,6 +7753,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/02n4b9,Rick Moranis,M,1953.0,1.5494,Jewish people
 /m/032f4s,Sela Ward,F,1956.0,1.71,
 /m/04bdw5,Frederic Forrest,M,1936.0,1.8,
+/m/04wg38,Edward Burns,M,,1.85,
 /m/064wfz,Alexandra Paul,F,1963.0,1.78,
 /m/0gdm4ft,Uma Dutt,M,,,
 /m/0gbx0xx,Gundu Hanmantha Rao,M,,,Indian people
@@ -7868,6 +7877,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/0706zc,Robert Rusler,M,1965.0,,
 /m/09rw9k,Max Beesley,M,1971.0,1.778,
 /m/01vw37m,Ludacris,M,1977.0,1.721,African American
+/m/0d0d8n,Sandhya,F,,1.6,
 /m/04ydvkb,Gordon McLeod,M,1890.0,,
 /m/04y6c5h,Mayilsamy,M,1965.0,,
 /m/03m8plh,Brinda Parekh,F,1984.0,,
@@ -7911,6 +7921,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/02x0kpj,Diane Salinger,F,1951.0,,
 /m/06qwt4,Bruce Vilanch,M,1948.0,,
 /m/088qb2,Godfrey Cambridge,M,1933.0,,African American
+/m/01xwqn,Artie Lange,M,,1.75,Indigenous peoples of the Americas
 /m/07kf2z,Griffith Jones,M,1909.0,,
 /m/0f9vlr,Antwon Tanner,M,1975.0,1.68,African American
 /m/03t4cz,Aaron Eckhart,M,1968.0,1.83,
@@ -8352,6 +8363,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/02qz347,Silvio Orlando,M,1957.0,,
 /m/01x2bq4,Noor Jehan,F,1926.0,,
 /m/0cfdbx,Rehman,M,1921.0,,
+/m/025y5tc,Rahman,M,,1.8288,Indian people
 /m/09vxjf,"Don ""Red"" Barry",M,1912.0,1.63,
 /m/043nshs,Anthony Bushell,M,1904.0,,
 /m/047pd8n,Selmer Jackson,M,1888.0,,
@@ -8667,6 +8679,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/02ps3y3,Randeep Hooda,M,1976.0,1.8,
 /m/07dq1b,Lillian Hall-Davis,F,1898.0,,
 /m/064qpwk,Jamie Harris,M,1963.0,,
+/m/09ggz74,Sheela,F,,,
 /m/03d9sf,Bobby Driscoll,M,1937.0,,
 /m/07z7g5,Heather Angel,F,1909.0,1.57,
 /m/02lg9w,Aida Turturro,F,1962.0,1.65,
@@ -8814,6 +8827,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/026mrhp,Elsa Martinelli,F,1935.0,1.68,
 /m/0f9532,Maxine Audley,F,1923.0,1.65,
 /m/01pww7v,Eason Chan Yik-Shun,M,1974.0,1.73,
+/m/0cqcgj,Prithviraj Sukumaran,M,,1.81,Indian people
 /m/0c9c7l,Terence Rigby,M,1937.0,,
 /m/0gc99_4,Sheela Sharma,F,,,
 /m/02q_1y,Edward Platt,M,1916.0,,
@@ -8875,7 +8889,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/0g9nhfq,Bernard Behrens,M,,,
 /m/0ck627,Edward Underdown,M,1908.0,,
 /m/063t2g,Stanley Clements,M,1926.0,,
-/m/0flhn7,John Cassini,M,2011.0,1.75,
+/m/0flhn7,John Cassini,M,,1.75,
 /m/02skjf,Dan Haggerty,M,1942.0,1.854,
 /m/0808n_,Paul Müller,M,1923.0,,
 /m/013tjc,Don Rickles,M,1926.0,1.68,Jewish people
@@ -8921,11 +8935,12 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/0cztfk,Julie Carmen,F,1954.0,,
 /m/0270tt7,Teresa Mo,F,1958.0,,
 /m/0bt105,Richmond Arquette,M,1963.0,,
+/m/08txvj,Thea Vidale,F,,,African American
 /m/0cc78ry,Frank Graham,M,1914.0,,
 /m/096_mc,Loletta Lee,F,1966.0,1.65,
 /m/0gczdf,Jiří Lábus,M,1950.0,,
 /m/06lx2h,Wheeler & Woolsey,,,,
-/m/08kq43,Jane Carr,F,1950.0,,
+/m/08kq43,Jane Carr,F,,,
 /m/04kd40,Gila Almagor,F,1939.0,,
 /m/08679c,Sam Bottoms,M,1955.0,1.8,
 /m/02623jg,Musetta Vander,F,1963.0,1.727,
@@ -9142,6 +9157,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/02q5z2j,Harry Fowler,M,1926.0,,
 /m/0256zn,Tracy Scoggins,F,1953.0,1.715,
 /m/0g0j22,Alan Scarfe,M,1946.0,1.759,
+/m/0534nr,Dave Goelz,M,1946.0,,
 /m/08_v4k,Yury Yakovlev,M,1928.0,,
 /m/0g09j2,John McMartin,M,1929.0,,
 /m/0272ybv,Danny Mann,M,1951.0,,
@@ -9197,6 +9213,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/05731gs,Michelle Nolden,F,,1.72,
 /m/06sxjx,Brad Johnson,M,1959.0,1.9,
 /m/03hg1wk,Amedeo Nazzari,M,1907.0,,
+/m/0gjv07,Tony Martin,M,,,
 /m/04zhm1,Gary Sweet,M,1957.0,,
 /m/02q2y2l,Alain Cuny,M,1908.0,,
 /m/0ksxpx,Derek Bond,M,1920.0,,
@@ -9275,6 +9292,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/04g03tm,Tony Darrow,M,1938.0,1.78,
 /m/0djwy_g,Amita Nangia,F,,,
 /m/05rdl1,May McAvoy,F,1899.0,,
+/m/0b55cx,Kunal Kapoor,M,,1.88,Indian people
 /m/026g7t5,Prema,F,1977.0,,Indian people
 /m/028f6l,Catherine Bach,F,1954.0,1.73,
 /m/02js6_,Jake Gyllenhaal,M,1980.0,1.83,Swedish American
@@ -9288,12 +9306,15 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/03mfs0,Harry H. Corbett,M,1925.0,,
 /m/0bjqfv,Abdur Razzak,M,1942.0,,
 /m/07b8pn,Chris Wedge,M,1957.0,,
+/m/025xyzk,Tarun Kumar,M,,1.73,Indian people
 /m/07jbbt,Jessica Harper,F,1949.0,1.62,
 /m/025k8f,Nick Adams,M,1931.0,,
 /m/02_pbr,Harvey Korman,M,1927.0,1.91,Jewish people
 /m/0c1g_82,Tom Nowicki,M,,,
+/m/04vq3h,Paul Guilfoyle,M,,1.727,
 /m/09rxpss,Masaya Kato,M,1963.0,,
 /m/05q8thn,Law Lan,F,1934.0,,
+/m/0f6rmh,Mary Murphy,F,,1.62,
 /m/0347mv,Debbi Morgan,F,1956.0,,African American
 /m/03hgp_j,Vijayachander,M,,,
 /m/02k21g,Maya Rudolph,F,1972.0,1.7,Jewish people
@@ -9329,6 +9350,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/05fblcq,Esther Dale,F,1885.0,,
 /m/0jz4nv,Gerry Becker,M,1951.0,,
 /m/064jjy,Peter Berg,M,1962.0,1.85,Jewish people
+/m/09v6p4,John Beck,M,,,
 /m/01jl1f,Bill Kerr,M,1922.0,,
 /m/0f_7n2,Brad Rowe,M,1970.0,,
 /m/05f756d,Anoop Menon,M,,,Indian people
@@ -9412,6 +9434,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/07xkz7,Barry Shabaka Henley,M,1954.0,1.88,African American
 /m/08hpfj,Alana Austin,F,1982.0,1.702,
 /m/03rt93,Ronnie Schell,M,1931.0,1.72,
+/m/01w1ywm,Richard Hunt,M,1951.0,,
 /m/03gsjv,Steve Whitmire,M,1959.0,1.93,
 /m/03d2fr3,Robert Emmett O'Connor,M,1885.0,,
 /m/0gqshm,Mala Aravindan,M,,,
@@ -9427,6 +9450,7 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/0cykn_,Deborah Rush,F,1954.0,,
 /m/0341ht,Deborah Foreman,F,1962.0,1.65,
 /m/04csf00,Greg Bryk,M,1972.0,1.85,
+/m/027fflx,"Antonio Sabàto, Jr.",M,,1.85,
 /m/0266fx2,Denis O'Dea,M,1905.0,,
 /m/0cpnt7,Rajshree,F,1945.0,1.59,Indian people
 /m/01wbsdz,Bow Wow,M,1987.0,1.73,
@@ -9467,6 +9491,9 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/017yxq,Tom Green,M,1971.0,1.9,
 /m/03c0k,Gavin MacLeod,M,1931.0,1.8,
 /m/07pfcc,Moira Lister,F,1923.0,,
+/m/05_zc7,Govinda,M,,1.73,Indian people
+/m/08z_kd,Neelam,F,,,Indian people
+/m/090x7d,Meenakshi Seshadri,F,,,Indian people
 /m/02vl82v,Eduard Fernández,M,1964.0,1.66,
 /m/09f57q,Ivy Ling Po,F,1939.0,,
 /m/063r24,Brian O'Halloran,M,1969.0,,
@@ -9479,21 +9506,71 @@ ID,name,gender,year_of_birth,height,ethnicity
 /m/03h0949,Inna Churikova,F,1943.0,,
 /m/027fy0w,Eve Gordon,F,1960.0,1.67,
 /m/0g546z,Adam Roarke,M,1937.0,,
+/m/08kq43,Jane Carr,F,1950.0,,
 /m/027d2rs,Benito Stefanelli,M,1928.0,,
 /m/027kvmt,Rhian Denise Ramos,F,1990.0,1.65,
 /m/0f0ssy,Sally O'Neil,F,1908.0,,
+/m/06rwfp,Trevor Eve,M,,1.816,
 /m/0c20w0,Aditi Gowitrikar,F,1976.0,1.7,
 /m/02v7y3,G. D. Spradlin,M,1920.0,,
 /m/03cdzsc,Kevin Schon,M,1945.0,,
+/m/02r167,Brandon De Wilde,M,,,
+/m/0416zpw,Lily Li,F,,,
 /m/08z0yh7,Craig Richards,M,1955.0,1.9,Germans
+/m/026m_gk,Sangeetha,F,,,
+/m/026g7t5,Prema,F,,,Indian people
 /m/03z313,Elisabeth Röhm,F,1973.0,1.73,
+/m/0c18ht,Radha,F,,,Indian people
+/m/0gnw1s,Frances Lee McCain,F,,,
+/m/040wdl,Bobby Deol,M,,1.83,
 /m/01rzxl,Hulk Hogan,M,1953.0,2.01,
 /m/0kslcd,Barry Livingston,M,1953.0,1.65,
 /m/05m771,Clara Blandick,F,1880.0,,
 /m/062k8n,Maurice Garrel,M,1923.0,,
 /m/02x4cb8,Quinn K. Redeker,M,1936.0,,
+/m/07rhpg,Lesley Sharp,F,,1.65,
+/m/07p24t,Kate Ashfield,F,,1.68,
 /m/02kmtz,O. W. Fischer,M,1915.0,,
 /m/0f0spt,Benedict Wong,M,1970.0,,
+/m/03hllvw,Kaveri,F,,,Indian people
 /m/02qdc5h,Vladimir Mashkov,M,1963.0,1.88,
+/m/0c18z0,Ambika,F,,,Indian people
 /m/09gnmmv,Dhanya Mary Varghese,F,1985.0,,Malayali
+/m/046rfv,Meena,F,,,Indian people
 /m/027dkny,"Eddie Foy, Jr.",M,1905.0,,
+/m/01yh3y,Corey Burton,M,,1.68,
+/m/0871ns,Helena Bergström,F,,1.6,
+/m/04w391,Shia LaBeouf,M,,1.759,Jewish people
+/m/03mghw3,Jamuna,F,,,
+/m/05kyb8,Elle Fanning,F,,1.7,German American
+/m/0fthdk,Dakota Fanning,F,,1.63,German American
+/m/08x3rq,George Harris,M,,1.87,
+/m/0prjs,Kenneth Branagh,M,,1.77,
+/m/03yrkt,Brittany Snow,F,,1.63,
+/m/08w8g0,Dino Morea,M,,1.82,
+/m/060nf4,Jane Adams,F,,1.65,
+/m/04g0yqj,Sudhakar,M,,,
+/m/03hhycl,Kalpana,F,,,Indian people
+/m/034456,Erica Leerhsen,F,,1.74,
+/m/02xgtz,Lukas Haas,M,,1.85,
+/m/09x0p5,Lee Evans,M,,1.75,
+/m/0ck91,Jane Seymour,F,,1.61,British Jews
+/m/02tk74,Natasha Richardson,F,,1.715,
+/m/01v9hx,Annette O'Toole,F,,1.6,
+/m/0chdp0,George Wallace,M,,1.9,African American
+/m/05xf0w,Mark Lester,M,,,
+/m/0789ts,Ted Lewis,M,,,
+/m/016xh5,Hugh Grant,M,,1.8,
+/m/07yqgqd,Robert Baker,M,,1.88,
+/m/016yvw,Daniel Day-Lewis,M,,1.87,Jewish people
+/m/06ljz3,Kumar Gaurav,M,,,
+/m/0c4db1,"Don ""The Dragon"" Wilson",M,,,
+/m/03rk93,Rachael Stirling,F,,1.753,
+/m/0307gs,Tim Abell,M,,1.78,
+/m/06sxjx,Brad Johnson,M,,1.9,
+/m/02t1cp,William Forsythe,M,,1.83,
+/m/0c192l,Ramya,F,,1.55,
+/m/0cmn9c,Prabhas Raju Uppalapati,M,,1.89,Indian people
+/m/0m31m,Joseph Fiennes,M,,1.83,
+/m/07wn_5,Sandrine Bonnaire,F,,1.67,
+/m/02pb53,Robert Klein,M,,,Jewish people
