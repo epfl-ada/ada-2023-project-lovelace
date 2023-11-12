@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import ast
+import unicodedata
+import re
 
 
 def parse_list(string):
@@ -35,3 +37,25 @@ def parse_dict(string):
         return values if values else np.nan
     except:
         return np.nan
+
+
+def standardize_str(string):
+    """
+    Standardize a string by removing accents and special characters, converting to lowercase, and removing extra spaces.
+
+    Parameters:
+    string (str): The string to standardize.
+
+    Returns:
+    str: The standardized string.
+    """
+    # normalize the string to unicode NFKD format and convert to lowercase
+    nfkd_form = unicodedata.normalize('NFKD', string).lower()
+    # remove non-alphanumeric characters (excluding spaces)
+    no_special_chars = re.sub('[^a-z0-9 ]', '', nfkd_form)
+    # replace multiple spaces with a single space
+    single_spaced = re.sub('\s+', ' ', no_special_chars)
+    # strip leading and trailing spaces
+    stripped = single_spaced.strip()
+
+    return stripped
