@@ -126,7 +126,9 @@ def parse_list_actors(string):
     list: The list evaluated from the string, or np.nan if evaluation fails.
     """
     try:
-        return string.split(",")
+        string = string.replace("'", "")
+        string = string[1:-1]
+        return np.array(string.split(" "))
     except:
         return np.nan
 
