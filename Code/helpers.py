@@ -3,6 +3,23 @@ import pandas as pd
 import ast
 import unicodedata
 import re
+from rapidfuzz import process
+
+
+def parse_string(string):
+    """
+    Safely parse a string and evaluate it as a python literal.
+
+    Parameters:
+    string (str): The string representation of a python literal.
+
+    Returns:
+    object: The evaluated python literal, or np.nan if evaluation fails.
+    """
+    try:
+        return ast.literal_eval(string)
+    except:
+        return np.nan
 
 
 def parse_list(string):
@@ -153,3 +170,25 @@ def standardize_str(string):
     stripped = single_spaced.strip()
 
     return stripped
+
+
+def get_best_match(row, grouped_df, scorer, threshold=95):
+    """
+       Find the best match with a given minimum similarity threshold for a given movie title.
+
+       Parameters:
+       row (Series): The row containing the movie information.
+       grouped_df (DataFrameGroupBy): The grouped DataFrame containing movies by release year.
+       scorer: The scoring function for similarity comparison.
+       threshold (int): The minimum similarity threshold for considering a match.
+
+       Returns:
+       The best matching movie title if its similarity is above the threshold, otherwise np.nan.
+       """
+    # filter the imdb dataframe to check only for movies with the same release year
+    same_year_movies = grouped_df.get_group(row['releaseYear'])['movieName'] if \
+        (row['releaseYear'] in grouped_df.groups) else []
+    # find the best match for the given movie title
+    best_match = process.extractOne(row['movieName'], same_year_movies, scorer=scorer)
+    # return the best match if its similarity is above the threshold
+    return best_match[0] if best_match and best_match[1] >= threshold else np.nan
