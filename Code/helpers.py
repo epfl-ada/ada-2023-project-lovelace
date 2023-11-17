@@ -218,7 +218,7 @@ def plot_degree_distribution(G):
     sorted_degree = sorted(degrees.items())
     deg = [k for (k, v) in sorted_degree]
     cnt = [v for (k, v) in sorted_degree]
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(10, 5))
     plt.bar(deg, cnt, width=0.80, color='b')
     plt.title("Degree Distribution")
     plt.ylabel("Frequency")
