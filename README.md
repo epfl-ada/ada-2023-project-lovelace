@@ -42,11 +42,16 @@ Moving forward to Milestone P3, our objective is to delve into how actors evolve
 
 3. Network Analysis
 
+We used network analysis to understand and visualize patterns in the film industry. Actors are nodes, and edges represent collaboration through shared appearances in the same movies. Focusing on Oscar-winning actors, our data contains node attributes (e.g., age, gender, ethnicity). 
+
+We examined the graph structure and node importance indices (connected components, diameter, shortest path, transitivity, degree distribution, betweenness centrality, and community detection). The Oscar-winning network is strongly connected; some actors act as hubs, and others bridge between communities.
+
+Future considerations will include how the network changed over time, and if certain actors are less central now than in the past. We will also be analyzing how the global network looks and if we can find communities corresponding to Hollywood, Bollywood, or the French cinema industry ...
 
 
 4. Ethnicities and Oscars
 
-We thought it would be interesting to see whether the ethnicity of an actor influences their career. The ethnicity field provided in the original dataset cannot be used directly; it is in the form of a Freebase ID. To solve this problem, we used a full archive of the Freebase database to convert the IDs to meaningful strings. We performed a basic analysis of the ethnicities provided: the data may be difficult to exploit because we believe that there are more missing values for some ethnicities. Additionally, some ethnicities are not mutually exclusive; for example, both the ethnicity 'Jewish people' and 'White people' are present.
+We explored the influence of actor ethnicity on their careers. Converting Freebase IDs to meaningful strings using a full archive, we conducted basic analyses. Challenges include potential missing values and non-mutually exclusive ethnicities, like 'Jewish people' and 'White people' both being present.
 
 Oscars can be proof of the success of an actor and can have a great impact on their future career; we decided to study them. First, we want to analyze what are the factors that might lead an actor towards an Oscar nomination. In order to do so, we will perform correlation analyses to determine the relationships between potential factors and Oscar nominations. Secondly, we would like to investigate whether actors with previous Oscar nominations or wins are more likely to receive future nominations. This will be done using statistical models like logistic regression to model the likelihood of future nominations based on past nominations or wins.
 
