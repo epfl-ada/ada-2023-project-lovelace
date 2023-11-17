@@ -57,7 +57,11 @@ Moving forward to Milestone P3, our objective is to delve into how actors evolve
 │    
 ├── 05.12.22 - Construct genres Markov chain 
 │  
+├── 07.12.22 - Construct actors activity pattern
+│  
 ├── 09.12.22 - Construct complete actor network 
+│  
+├── 10.12.22 - Cluster and analyze actors activity pattern
 │  
 ├── 12.12.22 - Finalize analysis
 │   
