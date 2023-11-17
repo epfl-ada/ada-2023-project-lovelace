@@ -22,11 +22,13 @@ Usually, when you seek information about someone's career, you turn to LinkedIn.
 
 0. Merging the datasets
 
-The first step of our analysis is to merge the different datasets we are using. As they are not sourced from the same database, they don't have a common unique identifier. Therefore, we had no choice but to merge on names of either of movies or actors. This pose an issue as if a title can be written in different formats and the matching might not be exact. For example, the title 'Harry Potter and the Deathly Hallows Part I' can also be written as 'Harry Potter and the Deathly Hallows Part 1'. In this case the standard matching will not work. To resolve this problem we first standardize the titles by removing special characters and setting all the characters to lower case. We then used Fuzzy Matching using the `rapidfuzz` library in order to match the movie titles that are sufficiently close to eachother using the WRatio similarity metric. We can then perform the merge on the matched titles and release year. 
+The first step of our analysis is to merge the different datasets we are using. As they are not sourced from the same database, they don't have a common unique identifier. Therefore, we had no choice but to merge on names of either movies or actors. This poses an issue, as a title can be written in different formats, and the matching might not be exact. For example, the title 'Harry Potter and the Deathly Hallows Part I' can also be written as 'Harry Potter and the Deathly Hallows Part 1'. In this case, the standard matching will not work. To resolve this problem, we first standardize the titles by removing special characters and setting all the characters to lowercase. We then use Fuzzy Matching with the `rapidfuzz` library to match movie titles that are sufficiently close to each other using the WRatio similarity metric. We can then perform the merge on the matched titles and release year.
 
 1. Career characterization
 
-... blabla jennifer
+Now that we have compiled all needed data, we constructed a new actors-oriented dataframe. This dataframe contains the general information about actors, including details such as the list of movies they have been involved in and whether they have been nominated for an Oscar. Our initial analytical focus will involve a comparative examination of actors' careers, considering various basic characteristics. This includes factors such as the age at which their careers began, the duration of their careers, and the progression of movie ratings for films in which they participated, among other features.
+
+Drawing inspiration from the research paper that can be found [here](https://www.nature.com/articles/s41467-019-10213-0), our approach will involve the construction of the typical activity pattern of actors. This pattern can be seen as a sequential representation of active years interspersed with latent years without any professional activity. Finally, we aim to employ clustering techniques to categorize actors based on distinct career types.
 
 2. Genres exploration
 
@@ -55,7 +57,11 @@ Moving forward to Milestone P3, our objective is to delve into how actors evolve
 │    
 ├── 05.12.22 - Construct genres Markov chain 
 │  
+├── 07.12.22 - Construct actors activity pattern
+│  
 ├── 09.12.22 - Construct complete actor network 
+│  
+├── 10.12.22 - Cluster and analyze actors activity pattern
 │  
 ├── 12.12.22 - Finalize analysis
 │   
