@@ -18,6 +18,8 @@ Usually, when you seek information about someone's career, you turn to LinkedIn.
 
 - [**Oscars**](https://www.kaggle.com/datasets/unanimad/the-oscar-award) - The Oscars dataset, sourced from Kaggle and scraped from the Official Academy Awards site, spans nominations from $1927$ to $2022$ across various categories. For our analysis, we retain categories related to actors.
 
+- [**Freebase dataset**](https://developers.google.com/freebase) - Full archive of the Freebase database. The archive is used to convert Freebase IDs to text strings. Processing the data took a rather long time and had to be done carefully since the the dataset has an important size: more than 30 Go compressed.
+
 ## Methods
 
 0. Merging the datasets
@@ -26,7 +28,7 @@ The first step of our analysis is to merge the different datasets we are using. 
 
 1. Career characterization
 
-Now that we have compiled all needed data, we constructed a new actors-oriented dataframe. This dataframe contains the general information about actors, including details such as the list of movies they have been involved in and whether they have been nominated for an Oscar. Our initial analytical focus will involve a comparative examination of actors' careers, considering various basic characteristics. This includes factors such as the age at which their careers began, the duration of their careers, and the progression of movie ratings for films in which they participated, among other features.
+Now that we have compiled all needed data, we constructed a new actors-oriented dataframe. This dataframe contains the general information about actors, including details such as the list of movies they have been involved in and whether they have been nominated for an Oscar. Our initial analytical focus will involve a comparative examination of actors' careers, considering various basic characteristics, such as the age at which their careers began, the duration of their careers, and the progression of movie ratings for films in which they participated, among other features.
 
 Drawing inspiration from the research paper that can be found [here](https://www.nature.com/articles/s41467-019-10213-0), our approach will involve the construction of the typical activity pattern of actors. This pattern can be seen as a sequential representation of active years interspersed with latent years without any professional activity. Finally, we aim to employ clustering techniques to categorize actors based on distinct career types.
 
@@ -43,6 +45,10 @@ Moving forward to Milestone P3, our objective is to delve into how actors evolve
 
 
 4. Ethnicities and Oscars
+
+We thought it would be interesting to see whether the ethnicity of an actor influences their career. The ethnicity field provided in the original dataset cannot be used directly; it is in the form of a Freebase ID. To solve this problem, we used a full archive of the Freebase database to convert the IDs to meaningful strings. We performed a basic analysis of the ethnicities provided: the data may be difficult to exploit because we believe that there are more missing values for some ethnicities. Additionally, some ethnicities are not mutually exclusive; for example, both the ethnicity 'Jewish people' and 'White people' are present.
+
+Oscars can be proof of the success of an actor and can have a great impact on their future career; we decided to study them. First, we want to analyze what are the factors that might lead an actor towards an Oscar nomination. In order to do so, we will perform correlation analyses to determine the relationships between potential factors and Oscar nominations. Secondly, we would like to investigate whether actors with previous Oscar nominations or wins are more likely to receive future nominations. This will be done using statistical models like logistic regression to model the likelihood of future nominations based on past nominations or wins.
 
 ## Proposed timeline
 
@@ -86,7 +92,6 @@ Moving forward to Milestone P3, our objective is to delve into how actors evolve
 - Mariem Boughzala :  Network Analysis
 - Adrien Vannson : Ethnicities and Oscars
 
-## Questions for TAs
 
 
 
