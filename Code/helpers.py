@@ -1,8 +1,10 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 import ast
 import unicodedata
 import re
+import networkx as nx
 from rapidfuzz import process
 
 
@@ -143,6 +145,7 @@ def parse_list_actors(string):
     list: The list evaluated from the string, or np.nan if evaluation fails.
     """
     try:
+        string = string.replace("\n", "")
         string = string.replace("'", "")
         string = string[1:-1]
         return np.array(string.split(" "))
@@ -186,9 +189,87 @@ def get_best_match(row, grouped_df, scorer, threshold=95):
        The best matching movie title if its similarity is above the threshold, otherwise np.nan.
        """
     # filter the imdb dataframe to check only for movies with the same release year
-    same_year_movies = grouped_df.get_group(row['releaseYear'])['movieName'] if \
+    same_year_movies = grouped_df.get_group(row['releaseYear'])['movieNameStd'] if \
         (row['releaseYear'] in grouped_df.groups) else []
     # find the best match for the given movie title
-    best_match = process.extractOne(row['movieName'], same_year_movies, scorer=scorer)
+    best_match = process.extractOne(row['movieNameStd'], same_year_movies, scorer=scorer)
     # return the best match if its similarity is above the threshold
     return best_match[0] if best_match and best_match[1] >= threshold else np.nan
+
+
+def plot_degree_distribution(G):
+    """
+    Plots the degree distribution of a graph.
+
+    This function calculates the degree of each node in the graph G. It then aggregates
+    and plots the frequency of each degree in the graph, displaying the result as a bar chart.
+    The x-axis of the chart represents the degree of the nodes, and the y-axis shows the
+    frequency of each degree in the graph.
+
+    Parameters:
+    G (networkx.Graph): A networkx graph object whose degree distribution is to be plotted.
+    """
+    degrees = {}
+    for node in G.nodes():
+        degree = G.degree(node)
+        if degree not in degrees:
+            degrees[degree] = 0
+        degrees[degree] += 1
+    sorted_degree = sorted(degrees.items())
+    deg = [k for (k, v) in sorted_degree]
+    cnt = [v for (k, v) in sorted_degree]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    plt.bar(deg, cnt, width=0.80, color='b')
+    plt.title("Degree Distribution")
+    plt.ylabel("Frequency")
+    plt.xlabel("Degree")
+    ax.set_xticks([d + 0.05 for d in deg])
+    ax.set_xticklabels(deg)
+    plt.show()
+
+
+def describe_graph(G):
+    """
+    Prints various properties of the given graph.
+
+    This function takes a graph G and prints its properties, including whether the
+    graph is connected, the average shortest path length, the diameter of the graph,
+    its sparsity, and the global clustering coefficient (transitivity).
+
+    Parameters:
+    G (networkx.Graph): A networkx graph object whose properties are to be described.
+    """
+    print(G)
+    if nx.is_connected(G):
+        print("Avg. Shortest Path Length: %.4f" % nx.average_shortest_path_length(G))
+        print("Diameter: %.4f" % nx.diameter(G))  # Longest shortest path
+    else:
+        print("Graph is not connected")
+        print("Diameter and Avg shortest path length are not defined!")
+    print("Sparsity: %.4f" % nx.density(G))  # #edges/#edges-complete-graph
+    print("Global clustering coefficient aka Transitivity: %.4f" % nx.transitivity(G))
+
+
+def visualize_graph(G, with_labels=True, k=None, alpha=1.0, node_shape='o'):
+    """
+    Visualizes the given graph using NetworkX's drawing methods.
+
+    This function takes a graph G and plots it using a spring layout. The visualization
+    includes options to display node labels, adjust the transparency of edges, and
+    specify the shape of the nodes. The function is primarily used for a quick and easy
+    visual representation of the graph structure.
+
+    Parameters:
+    G (networkx.Graph): A networkx graph object to be visualized.
+    with_labels (bool): If True, the nodes are labeled with their ids.
+    k (float): Optimal distance between nodes. If None, the value is chosen automatically.
+    alpha (float): Transparency of the edges.
+    node_shape (str): Shape of the nodes.
+    """
+    pos = nx.spring_layout(G, k=k)
+    if with_labels:
+        nx.draw_networkx_labels(G, pos, labels=dict([(n, n) for n in G.nodes()]))
+    nx.draw_networkx_edges(G, pos, alpha=alpha)
+    nx.draw_networkx_nodes(G, pos, nodelist=G.nodes(), node_color='g', node_shape=node_shape)
+    plt.axis('off')
+    plt.show()
