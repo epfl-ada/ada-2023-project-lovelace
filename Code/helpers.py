@@ -8,22 +8,6 @@ import networkx as nx
 from rapidfuzz import process
 
 
-def parse_string(string):
-    """
-    Safely parse a string and evaluate it as a python literal.
-
-    Parameters:
-    string (str): The string representation of a python literal.
-
-    Returns:
-    object: The evaluated python literal, or np.nan if evaluation fails.
-    """
-    try:
-        return ast.literal_eval(string)
-    except:
-        return np.nan
-
-
 def parse_list(string):
     """
     Parse a string representation of a list, safely evaluating it back into a list.
