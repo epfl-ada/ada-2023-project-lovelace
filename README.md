@@ -9,7 +9,7 @@ Usually, when you seek information about someone's career, you turn to LinkedIn.
 
 1.	What characterize the career evolution of actors?
 2.	How do actors navigate and evolve through different genres over the course of their career? 
-3.	Are successful actors more interconnected between each other than to other actors? A REFAIRE
+3.	Can patterns be observed in the network that connects actors?
 4.	What shared attributes distinguish actors who have received Oscar nominations?
 
 ## Additional Datasets 
@@ -42,7 +42,7 @@ Moving forward to Milestone P3, our objective is to delve into how actors evolve
 
 3. Network Analysis
 
-We used network analysis to understand and visualize patterns in the film industry. Actors are nodes, and edges represent collaboration through shared appearances in the same movies. Focusing on Oscar-winning actors, our data contains node attributes (e.g., age, gender, ethnicity). 
+We used network analysis to understand and visualize patterns in the film industry. Actors are nodes, and edges represent collaboration through shared appearances in the same movies. Focusing on Oscar-winning actors, our network contains node attributes related to age, gender, ethnicity, etc. 
 
 We examined the graph structure and node importance indices (connected components, diameter, shortest path, transitivity, degree distribution, betweenness centrality, and community detection). The Oscar-winning network is strongly connected; some actors act as hubs, and others bridge between communities.
 
