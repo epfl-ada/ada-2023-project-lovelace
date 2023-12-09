@@ -107,13 +107,15 @@ def actors_agg(df):
     Returns:
     - pandas.Series: Aggregated Series with information about actors, including 'fbID', 'ageAtMovieRelease', 'category', and 'winner'.
     """
-    fbID = np.unique(df["fbID"])
+    fbID, index = np.unique(df["fbID"], return_index=True)
     return pd.Series(
         {
             "fbID": fbID,
-            "ageAtMovieRelease": keep_as_dict(fbID, df["ageAtMovieRelease"]),
-            "category": keep_as_dict(fbID, df["category"]),
-            "winner": keep_as_dict(fbID, df["winner"]),
+            "ageAtMovieRelease": keep_as_dict(
+                fbID, df.iloc[index]["ageAtMovieRelease"]
+            ),
+            "category": keep_as_dict(fbID, df.iloc[index]["category"]),
+            "winner": keep_as_dict(fbID, df.iloc[index]["winner"]),
         }
     )
 
@@ -161,22 +163,27 @@ def standardize_str(string):
 
 def get_best_match(row, grouped_df, scorer, threshold=95):
     """
-       Find the best match with a given minimum similarity threshold for a given movie title.
+    Find the best match with a given minimum similarity threshold for a given movie title.
 
-       Parameters:
-       row (Series): The row containing the movie information.
-       grouped_df (DataFrameGroupBy): The grouped DataFrame containing movies by release year.
-       scorer: The scoring function for similarity comparison.
-       threshold (int): The minimum similarity threshold for considering a match.
+    Parameters:
+    row (Series): The row containing the movie information.
+    grouped_df (DataFrameGroupBy): The grouped DataFrame containing movies by release year.
+    scorer: The scoring function for similarity comparison.
+    threshold (int): The minimum similarity threshold for considering a match.
 
-       Returns:
-       The best matching movie title if its similarity is above the threshold, otherwise np.nan.
-       """
+    Returns:
+    The best matching movie title if its similarity is above the threshold, otherwise np.nan.
+    """
     # filter the imdb dataframe to check only for movies with the same release year
-    same_year_movies = grouped_df.get_group(row['releaseYear'])['movieNameStd'] if \
-        (row['releaseYear'] in grouped_df.groups) else []
+    same_year_movies = (
+        grouped_df.get_group(row["releaseYear"])["movieNameStd"]
+        if (row["releaseYear"] in grouped_df.groups)
+        else []
+    )
     # find the best match for the given movie title
-    best_match = process.extractOne(row['movieNameStd'], same_year_movies, scorer=scorer)
+    best_match = process.extractOne(
+        row["movieNameStd"], same_year_movies, scorer=scorer
+    )
     # return the best match if its similarity is above the threshold
     return best_match[0] if best_match and best_match[1] >= threshold else np.nan
 
@@ -203,7 +210,7 @@ def plot_degree_distribution(G):
     deg = [k for (k, v) in sorted_degree]
     cnt = [v for (k, v) in sorted_degree]
     fig, ax = plt.subplots(figsize=(10, 5))
-    plt.bar(deg, cnt, width=0.80, color='b')
+    plt.bar(deg, cnt, width=0.80, color="b")
     plt.title("Degree Distribution")
     plt.ylabel("Frequency")
     plt.xlabel("Degree")
@@ -234,7 +241,7 @@ def describe_graph(G):
     print("Global clustering coefficient aka Transitivity: %.4f" % nx.transitivity(G))
 
 
-def visualize_graph(G, with_labels=True, k=None, alpha=1.0, node_shape='o'):
+def visualize_graph(G, with_labels=True, k=None, alpha=1.0, node_shape="o"):
     """
     Visualizes the given graph using NetworkX's drawing methods.
 
@@ -254,6 +261,8 @@ def visualize_graph(G, with_labels=True, k=None, alpha=1.0, node_shape='o'):
     if with_labels:
         nx.draw_networkx_labels(G, pos, labels=dict([(n, n) for n in G.nodes()]))
     nx.draw_networkx_edges(G, pos, alpha=alpha)
-    nx.draw_networkx_nodes(G, pos, nodelist=G.nodes(), node_color='g', node_shape=node_shape)
-    plt.axis('off')
+    nx.draw_networkx_nodes(
+        G, pos, nodelist=G.nodes(), node_color="g", node_shape=node_shape
+    )
+    plt.axis("off")
     plt.show()
