@@ -7,18 +7,18 @@ Usually, when you seek information about someone's career, you turn to LinkedIn.
 
 ## Research Questions
 
-1.	What characterize the career evolution of actors?
-2.	How do actors navigate and evolve through different genres over the course of their career? 
-3.	Can patterns be observed in the network that connects actors?
-4.	What shared attributes distinguish actors who have received Oscar nominations?
+1. What characterizes the career trajectories of actors?
+2. How do actors navigate and evolve across various genres throughout their careers?
+3. Are there observable patterns in the network connecting actors?
+4. When do actors potentially receive an Oscar ?
 
 ## Additional Datasets 
 
-- [**IMDb Datasets**](https://www.imdb.com/interfaces/) - We incorporated two IMDb datasets, namely `title.basics` and `title.ratings`, into our analysis to extract movie ratings. These datasets will be used to uncover correlations between actors' careers and the ratings of the movies they participate in. The information includes average ratings and the number of votes from a vast database of 10 million movies. Upon merging with our [**CMU Movie Summary Corpus**](http://www.cs.cmu.edu/~ark/personas/), we achieved a matching rate of 62%.
+- [**IMDb Datasets**](https://www.imdb.com/interfaces/) - We incorporated one IMDb datasets, namely `title.basics`. This was useful for the genre analysis as there exists only 29 unique genres compared to 362 genres present in CMU. Upon merging with our [**CMU Movie Summary Corpus**](http://www.cs.cmu.edu/~ark/personas/), we achieved a matching rate of 62%.
 
-- [**Oscars**](https://www.kaggle.com/datasets/unanimad/the-oscar-award) - The Oscars dataset, sourced from Kaggle and scraped from the Official Academy Awards site, spans nominations from $1927$ to $2022$ across various categories. For our analysis, we retain categories related to actors.
+- [**Oscars**](https://www.kaggle.com/datasets/unanimad/the-oscar-award) - The Oscars dataset, sourced from Kaggle and scraped from the Official Academy Awards site, spans nominations from $1927$ to $2022$ across various categories. For our analysis, we retain only categories related to actors.
 
-- [**Freebase dataset**](https://developers.google.com/freebase) - Full archive of the Freebase database. The archive is used to convert Freebase IDs to text strings. Processing the data took a rather long time and had to be done carefully since the the dataset has an important size: more than 30 Go compressed.
+- [**Freebase dataset**](https://developers.google.com/freebase) - We utilized the archive of the Freebase database to convert the Freebase Ethnicity IDs to text strings.
 
 ## Methods
 
@@ -26,19 +26,23 @@ Usually, when you seek information about someone's career, you turn to LinkedIn.
 
 The first step of our analysis is to merge the different datasets we are using. As they are not sourced from the same database, they don't have a common unique identifier. Therefore, we had no choice but to merge on names of either movies or actors. This poses an issue, as a title can be written in different formats, and the matching might not be exact. For example, the title 'Harry Potter and the Deathly Hallows Part I' can also be written as 'Harry Potter and the Deathly Hallows Part 1'. In this case, the standard matching will not work. To resolve this problem, we first standardize the titles by removing special characters and setting all the characters to lowercase. We then use Fuzzy Matching with the `rapidfuzz` library to match movie titles that are sufficiently close to each other using the WRatio similarity metric. We can then perform the merge on the matched titles and release year.
 
-1. Career characterization
+1. Career Characterization
 
-Now that we have compiled all needed data, we constructed a new actors-oriented dataframe. This dataframe contains the general information about actors, including details such as the list of movies they have been involved in and whether they have been nominated for an Oscar. Our initial analytical focus will involve a comparative examination of actors' careers, considering various basic characteristics, such as the age at which their careers began, the duration of their careers, and the progression of movie ratings for films in which they participated, among other features.
+Now that we have compiled all needed data, we constructed a new actors-oriented dataframe. This dataframe contains the general information about actors, including details such as the list of movies they have been involved in and whether they have been nominated for an Oscar. 
 
-Drawing inspiration from the research paper that can be found [here](https://www.nature.com/articles/s41467-019-10213-0), our approach will involve the construction of the typical activity pattern of actors. This pattern can be seen as a sequential representation of active years interspersed with latent years without any professional activity. Finally, we aim to employ clustering techniques to categorize actors based on distinct career types.
+Drawing inspiration from the research paper that can be found [here](https://www.nature.com/articles/s41467-019-10213-0), our approach involves the construction of the typical activity pattern of actors, denoting the number of movies done by an actor for each year of his career. Following this, we utilized clustering techniques, including the Silhouette score to determine the optimal number of clusters, and k-means, to categorize actors into distinct career types.
 
-2. Genres exploration
+Our analysis then delves into specific aspects of acting trajectories, including the age at which careers started, the duration of their careers, and the correlation between the number of active years and the overall length of their career. Furthermore, we explore potential gender bias in all the factors under consideration.
 
-To explore how actors transition across various genres, our initial step involves unifying genre information from both the [CMU](http://www.cs.cmu.edu/~ark/personas/) and [IMDb](https://www.imdb.com/interfaces/) datasets. Initially, we combine genres and then standardize them. The combined dataset yields over 300 unique genres, making it impractical for analysis. To tackle this issue, we conduct a frequency analysis, identifying the most common words associated with genres. This process results in a refined set of 26 main genres.
+2. Genres Exploration
 
-Next, we examine movies genres from an actor-centric perspective. By examining the number of movies each actor participated in within each genre, we obtained a distribution of movies for each actor across diverse genres. With this information, we inferred correlations between the proportions of movies associated with pairs of genres. Employing the Pearson correlation coefficient and its associated p-value facilitated this correlation analysis. The Pearson correlation coefficient and its associated p-value was used for that part. 
+In this section, we examine movies genres from an actor-centric perspective. By examining the number of movies each actor participated in within each genre, we obtained a distribution of movies for each actor across diverse genres. With this information, we inferred correlations between the proportions of movies associated with pairs of genres. Employing the Pearson correlation coefficient and its associated p-value facilitated this correlation analysis. The Pearson correlation coefficient and its associated p-value was used for that part. 
 
-Moving forward to Milestone P3, our objective is to delve into how actors evolve across different genres. To accomplish this, we plan to construct a Markov Chain, with each state representing a distinct genre and the edges indicating the probabilities of transitioning from one genre to another. Additionally, we aim to integrate genres into our network analysis to observe potential clustering patterns among actors.
+Following this, we cluster actors based on their genre proportions using k-means, as described in part 1. This clustering allows us to compare different characteristics of actors within each cluster. Subsequently, we employ ANOVA to confirm differences between these clusters.
+
+Then to quantify how extensively actors explore different genres in our dataset, we utilize the Normalized Hill's Herfindahl Index (NHHI).
+
+Finally, our objective is to delve into how actors evolve across different genres. To achieve this, we construct a Markov Chain wherein each state represents a distinct genre, and the edges indicate the probabilities of transitioning from one genre to another. This approach helps us define a steady-state genre distribution in different time periods and understand the genres in which actors spend the majority of their careers on average.
 
 3. Network Analysis
 
@@ -49,11 +53,7 @@ We examined the graph structure and node importance indices (connected component
 Future considerations will include how the network changed over time, and if certain actors are less central now than in the past. We will also be analyzing how the global network looks and if we can find communities corresponding to Hollywood, Bollywood, or the French cinema industry ...
 
 
-4. Ethnicities and Oscars
-
-We explored the influence of actor ethnicity on their careers. Converting Freebase IDs to meaningful strings using a full archive, we conducted basic analyses. Challenges include potential missing values and non-mutually exclusive ethnicities, like 'Jewish people' and 'White people' both being present.
-
-Oscars can be proof of the success of an actor and can have a great impact on their future career; we decided to study them. First, we want to analyze what are the factors that might lead an actor towards an Oscar nomination. In order to do so, we will perform correlation analyses to determine the relationships between potential factors and Oscar nominations. Secondly, we would like to investigate whether actors with previous Oscar nominations or wins are more likely to receive future nominations. This will be done using statistical models like logistic regression to model the likelihood of future nominations based on past nominations or wins.
+4. Oscars
 
 ## Proposed timeline
 
@@ -66,13 +66,9 @@ Oscars can be proof of the success of an actor and can have a great impact on th
 │  
 ├── 03.12.22 - Update according to P2 feedback 
 │    
-├── 05.12.22 - Construct genres Markov chain 
+├── 07.12.22 - Construct genres Markov chains, actors profile sequence, and actors network
 │  
-├── 07.12.22 - Construct actors activity pattern
-│  
-├── 09.12.22 - Construct complete actor network 
-│  
-├── 10.12.22 - Cluster and analyze actors activity pattern
+├── 07.12.22 - Start analysis
 │  
 ├── 12.12.22 - Finalize analysis
 │   
@@ -91,11 +87,11 @@ Oscars can be proof of the success of an actor and can have a great impact on th
 
 ## Organization within the team
 
-- Michael Ha : Merging the datasets
-- Jennifer Abou-Najm : Career characterization
-- Valérie Costa : Genres exploration
-- Mariem Boughzala :  Network Analysis
-- Adrien Vannson : Ethnicities and Oscars
+- Jennifer Abou-Najm : Career characterization (Data Story and Analysis)
+- Mariem Boughzala :  Network analysis (Data Story and Analysis)
+- Valérie Costa : Dataset merging, genres exploration (Data Story and Analysis)
+- Michael Ha : Dataset merging, Oscars analysis (Data Story and Analysis)
+- Adrien Vannson : Ethnicities dataset extraction, website creation
 
 
 
