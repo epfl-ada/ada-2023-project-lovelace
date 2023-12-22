@@ -3,7 +3,9 @@
 ## Abstract
 How do you envision your career? We, as scientists, will probably spend a substantial portion of our career in the same company in a specific field, like pharma, robotics or data science for the most talented of us. For actors, the journey is more complex, involving potential shifts between diverse movie genres and marked by the inevitable highs and lows inherent to the profession. In our project, we aim at analyzing the trajectory of acting careers.
 
-Usually, when you seek information about someone's career, you turn to LinkedIn. Would you do the same to stalk your childhood actor crush? Well, good news, we are here to do it for you. From the number of connections (actors they have collaborated with), to the potential genre specialization in movies, and not forgetting the prospect of winning an Oscar, let’s delve into the intricacies of our actors’ careers.
+Usually, when you seek information about someone's career, you turn to LinkedIn. Would you do the same to stalk your childhood actor crush? Well, good news, we are here to do it for you. From the number of connections (actors they have collaborated with), to the potential genre specialization in movies, and not forgetting the prospect of winning an Oscar, let’s delve into the intricacies of our actors’ careers. 
+
+The datastory can be found [here](https://adrienvannson.github.io/epfl-ada-datastory/)!
 
 ## Research Questions
 
@@ -28,14 +30,14 @@ Usually, when you seek information about someone's career, you turn to LinkedIn.
 
 0. Merging the datasets
 
-The first step of our analysis is to merge the different datasets we are using. As they are not sourced from the same database, they don't have a common unique identifier. Therefore, we had no choice but to merge on names of either movies or actors. This poses an issue, as a title can be written in different formats, and the matching might not be exact. For example, the title 'Harry Potter and the Deathly Hallows Part I' can also be written as 'Harry Potter and the Deathly Hallows Part 1'. In this case, the standard matching will not work. To resolve this problem, we first standardize the titles by removing special characters and setting all the characters to lowercase. We then use Fuzzy Matching with the `rapidfuzz` library to match movie titles that are sufficiently close to each other using the WRatio similarity metric. We can then perform the merge on the matched titles and release year.
+The first step of our analysis is to merge the different datasets we are using. As they are not sourced from the same database, they do not have a common unique identifier. Therefore, we had no choice but to merge on names of either movies or actors. This poses an issue, as a title can be written in different formats, and the matching might not be exact. For example, the title 'Harry Potter and the Deathly Hallows Part I' can also be written as 'Harry Potter and the Deathly Hallows Part 1'. In this case, the standard matching will not work. To resolve this problem, we first standardize the titles by removing special characters and setting all the characters to lowercase. We then use Fuzzy Matching with the `rapidfuzz` library to match movie titles that are sufficiently close to each other using the WRatio similarity metric. We can then perform the merge on the matched titles and release year.
 
 
 1. Career Characterization
 
 Now that we have compiled all needed data, we constructed a new actors-oriented dataframe. This dataframe contains the general information about actors, including details such as the list of movies they have been involved in and whether they have been nominated for an Oscar.
 
-Drawing inspiration from the research paper that can be found [here](https://www.nature.com/articles/s41467-019-10213-0), our approach involves the construction of the typical activity pattern of actors, denoting the number of movies done by an actor for each year of his career. Following this, we utilized clustering techniques, including the Silhouette score to determine the optimal number of clusters, and k-means, to categorize actors into distinct career types.
+Drawing inspiration from the research paper that can be found [here](https://www.nature.com/articles/s41467-019-10213-0), our approach involves the construction of the career profile sequences of actors, denoting the number of movies done by an actor for each year of his career. Following this, we utilized clustering techniques, including the Silhouette score to determine the optimal number of clusters, and k-means, to categorize actors into distinct career types.
 
 Our analysis then delves into specific aspects of acting trajectories, including the age at which careers started, the duration of their careers, and the correlation between the number of active years and the overall length of their career. Furthermore, we explore potential gender bias in all the factors under consideration.
 
